@@ -1,11 +1,12 @@
 public class Email {
     private String email;
-    private Password password;
+    private String password;
 
-    public Email(String email,Password password){
+    public Email(String email,String password){
         this.email=email;
         this.password=password;
     }
     public Email(){
+        this("defult@gmail.com ","Aa1");
     }
 }
