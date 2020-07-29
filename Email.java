@@ -1,8 +1,9 @@
 import com.sun.javaws.exceptions.InvalidArgumentException;
 
 import java.security.InvalidParameterException;
+import java.util.Vector;
 
-public class Email {
+public class Email extends EmailOwnerInfo{
     private String email;
     private String password;
 
@@ -62,6 +63,17 @@ public class Email {
             }
         }else{
             throw new InvalidParameterException("password too short");
+        }
+    }
+
+
+    public void getInfo(Email em, Vector<Email> emails) {
+        if (emails.contains( em )) {
+            System.out.println("Name: "+em.getName());
+            System.out.println("Age: "+em.getAge());
+            System.out.println("city: "+em.getCity());
+        } else {
+            throw new InvalidParameterException( "invalid email doesn't exist in database " );
         }
     }
 }
