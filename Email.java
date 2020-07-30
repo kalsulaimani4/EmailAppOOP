@@ -68,13 +68,19 @@ public class Email extends EmailOwnerInfo{
     }
 
 
-    public void getInfo(Email em, Vector<Email> emails) {
+    public static void getInfo(Email em, Vector<Email> emails) {
         if (emails.contains( em )) {
             System.out.println("Name: "+em.getName());
             System.out.println("Age: "+em.getAge());
             System.out.println("city: "+em.getCity());
         } else {
             throw new InvalidParameterException( "invalid email doesn't exist in database " );
+        }
+    }
+
+    public static void testTwice(String firstPassword,String secondPassword){
+        if(!(firstPassword.equals( secondPassword ))){
+            throw new InvalidParameterException("passwords dont match enter again ");
         }
     }
 }
