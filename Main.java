@@ -10,7 +10,7 @@ public class Main {
         Vector<Email> emails= new Vector<>();// vector to store all the emails in
 
         // making some predefined emails
-        Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah");
+        Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah","name of your city :","makkah");
         emails.add( khalil );
 
         while(numOfTermnation!=3){
@@ -91,6 +91,15 @@ public class Main {
 
                     m.setPassword( password );
                     emails.add( m );
+
+                    System.out.println("Enter security question for backup if you forget your password : ");
+                    String backUp = scan.nextLine();
+                    m.setBackQuestion( backUp );
+
+                    System.out.println("Enter the answer for the question : ");
+                    String answer = scan.nextLine();
+                    m.setBackQuestionAnswer( answer );
+                    
                     break;
                 case 2:// sign in option
 

@@ -5,16 +5,19 @@ public class EmailOwnerInfo{
     private String name;
     private String city;
     private int age;
+    private String backQuestion;
+    private String backQuestionAnswer;
 
-    public  EmailOwnerInfo(String name, String city, int age){
+    public  EmailOwnerInfo(String name, String city, int age,String backQuestion,String backQuestionAnswer){
         this.name= name;
         this.city=city;
         this.age=age;
-
+        this.backQuestion=backQuestion;
+        this.backQuestionAnswer=backQuestionAnswer;
     }
 
     public EmailOwnerInfo(){
-        this("defult ","none",0);
+        this("default ","none",0,"default","default");
     }
 
     public void setAge(int age) {
@@ -39,6 +42,22 @@ public class EmailOwnerInfo{
 
     public String getName() {
         return name;
+    }
+
+    public void setBackQuestion(String backQuestion) {
+        this.backQuestion = backQuestion;
+    }
+
+    public String getBackQuestion() {
+        return backQuestion;
+    }
+
+    public void setBackQuestionAnswer(String backQuestionAnswer) {
+        this.backQuestionAnswer = backQuestionAnswer;
+    }
+
+    public String getBackQuestionAnswer() {
+        return backQuestionAnswer;
     }
 
 
