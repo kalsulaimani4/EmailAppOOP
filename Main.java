@@ -1,3 +1,4 @@
+import java.security.InvalidParameterException;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -8,10 +9,10 @@ public class Main {
         int numOfTermnation=0;// what will end the while loop
 
         Vector<Email> emails= new Vector<>();// vector to store all the emails in
-
         // making some predefined emails
         Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah");
         emails.add( khalil );
+
 
         while(3 != numOfTermnation){
 
@@ -19,11 +20,11 @@ public class Main {
             System.out.println("enter number for the service you want : ");
             System.out.println("1- sign up: "+"\n"+"2- sign in: "+"\n"+"3- end program: ");
             int option = scan.nextInt();
+            Email m = new Email();
 
             switch (option){
                 case 1:// sign up option
                     // calling empty constructor to make the object and then setting all the needed info
-                    Email m = new Email();
 
                     System.out.println("enter the needed info to make your account : ");
 
@@ -89,10 +90,41 @@ public class Main {
 
                     m.setPassword( password );
                     emails.add( m );
-
                     break;
                 case 2:// sign in option
+                    String loginEmail;
+                    String loginPassword;
+                    Email user;
+                    int index;
+                    while (true) {
+                        System.out.println( "enter Email : " );
+                        loginEmail = scan.next();
+                        try {
+                            Email.testEmail( loginEmail );
+                            index =Email.logInEmailTest( loginEmail , emails );
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                            continue;
+                        }
+                        break;
+                    }
 
+                    user=emails.elementAt( index );
+                    while (true){
+                        System.out.println("Enter password :");
+                        loginPassword = scan.next();
+
+                        try{
+                            Email.loginPasswordTest( loginPassword,user);
+                        }catch (InvalidParameterException e){
+                            System.out.println(e.getMessage());
+                            continue;
+                        }
+                        break;
+                    }
+
+                    System.out.println("you have logged in ");;
+                    Email.getInfo( user );
                     break;
 
                 case 3:
