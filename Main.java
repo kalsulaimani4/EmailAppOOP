@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         Scanner scan = new Scanner (System.in);
 
         int numOfTermnation=0;// what will end the while loop
@@ -10,10 +10,10 @@ public class Main {
         Vector<Email> emails= new Vector<>();// vector to store all the emails in
 
         // making some predefined emails
-        Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah","name of your city :","makkah");
+        Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah");
         emails.add( khalil );
 
-        while(numOfTermnation!=3){
+        while(3 != numOfTermnation){
 
             // printing main menu
             System.out.println("enter number for the service you want : ");
@@ -28,17 +28,14 @@ public class Main {
                     System.out.println("enter the needed info to make your account : ");
 
                     // getting name,age and city info and  setting it
-                    System.out.println("Enter your Name : ");
-                    String name=scan.nextLine();
-                    m.setName( name );
+                    System.out.println("Enter your first name  : ");
+                    m.setName( scan.next() );
 
-                    System.out.println("Enter your age : ");
-                    int age= scan.nextInt();
-                    m.setAge( age );
+                    System.out.print("Enter your age : ");
+                    m.setAge( scan.nextInt() );
 
                     System.out.println("Enter your city : ");
-                    String city= scan.nextLine();
-                    m.setCity( city );
+                    m.setCity( scan.next() );
 
 
                     //getting email testing it and setting it if the test method throws a exception make user renter email
@@ -60,10 +57,11 @@ public class Main {
                     //getting password and testing if it meets the requirements same processes as email test
                     //making user enter password twice before setting it and testing if its the same
                     String password;
+                    System.out.println( "Enter the password you want to use for your email " + m.getEmail() + ": " );
+
                     while(true) {
 
-                        System.out.println( "Enter the password you want to use for your email " + m.getEmail() + ": " );
-                        System.out.println("Password requiments length from 3 to 12 and one capital letter and a small letter and a number at least");
+                        System.out.println("Password requirements length from 3 to 12 and one capital letter and a small letter and a number at least");
                         password = scan.next();
 
                         try {
@@ -92,20 +90,13 @@ public class Main {
                     m.setPassword( password );
                     emails.add( m );
 
-                    System.out.println("Enter security question for backup if you forget your password : ");
-                    String backUp = scan.nextLine();
-                    m.setBackQuestion( backUp );
-
-                    System.out.println("Enter the answer for the question : ");
-                    String answer = scan.nextLine();
-                    m.setBackQuestionAnswer( answer );
-                    
                     break;
                 case 2:// sign in option
 
                     break;
 
                 case 3:
+                    System.out.println("program terminated ");
                     numOfTermnation=3;
                     continue;
 

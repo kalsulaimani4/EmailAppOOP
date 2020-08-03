@@ -7,13 +7,13 @@ public class Email extends EmailOwnerInfo{
     private String email;
     private String password;
 
-    public Email(String email,String password,String name,int age,String city,String backQuestion,String backQuestionAnswer){
-        super(name,city,age,backQuestion,backQuestionAnswer);
+    public Email(String email,String password,String name,int age,String city){
+        super(name,city,age);
         this.email=email;
         this.password=password;
     }
     public Email(){
-        this("defult@gmail.com ","Aa1","defult",0,"none","defult","defult");
+        this("defult@gmail.com ","Aa1","defult",0,"defult");
     }
 
     public void setEmail(String email) {
@@ -34,7 +34,7 @@ public class Email extends EmailOwnerInfo{
 
     public static void testEmail(String email) {
         if (!(email.endsWith( ".com" ) && email.contains( "@" ))) {
-            throw new InvalidParameterException( "invalid email doesn't contain " );
+            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com " );
         }
     }
 
