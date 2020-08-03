@@ -80,7 +80,7 @@ public class Email extends EmailOwnerInfo{
 
     public static void testTwice(String firstPassword,String secondPassword){
         if(!(firstPassword.equals( secondPassword ))){
-            throw new InvalidParameterException("passwords dont match enter again ");
+            throw new InvalidParameterException("passwords don't match enter again ");
         }
     }
 }

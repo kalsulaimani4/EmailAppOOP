@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("Enter your first name  : ");
                     m.setName( scan.next() );
 
-                    System.out.print("Enter your age : ");
+                    System.out.println("Enter your age : ");
                     m.setAge( scan.nextInt() );
 
                     System.out.println("Enter your city : ");
