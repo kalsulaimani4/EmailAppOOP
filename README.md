@@ -3,7 +3,7 @@ simple sign in and up app using oop concepts in java
 
 sign up functions:
 asking for the following :
-name,age,city,email, password and a security question .
+name,age,city,email, password .
 
 email test function to test if it is a valid email containing the
 "@" sign and ending with .com .
