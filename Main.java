@@ -134,7 +134,33 @@ public class Main {
                                 Email.getInfo( user );
                                 break ;
                             case 2:
+                                // testing old password to verify user
+                                while(true) {
+                                    System.out.println( "enter old password " );
+                                    String oldPass = scan.next();
+                                    try {
+                                        Email.testTwice( user.getPassword(),oldPass );
+                                    }catch (Exception e){
+                                        System.out.println(e.getMessage());
+                                        continue ;
+                                    }
 
+                                // changing the password for the user but testing of it meets the requirements
+                                    while(true) {
+                                        System.out.println( "enter new Password " );
+                                        String newPass = scan.next();
+                                        try {
+                                            Email.testPassword( newPass );
+                                        } catch (Exception e){
+                                            System.out.println(e.getMessage());
+                                            continue ;
+                                        }
+                                        Email.changePassword( newPass,user );
+                                        break ;
+                                    }
+                                    System.out.println("password has been changed to "+user.getPassword());
+                                    break ;
+                                }
                                 break ;
                             case 3:
                                 continue start;// jump to the starting loop

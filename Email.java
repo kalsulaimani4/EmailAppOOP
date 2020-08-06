@@ -118,6 +118,8 @@ public class Email extends EmailOwnerInfo{
         }
     }
 
-    
+    public static void changePassword( String newPassword,Email user){
+        user.password= newPassword;
+    }
 
 }
