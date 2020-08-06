@@ -13,7 +13,7 @@ public class Main {
         Email khalil = new Email("khalil@icloud.com","Aa123","khalil",20,"makkah");
         emails.add( khalil );
 
-
+        start:
         while(3 != numOfTermnation){
 
             // printing main menu
@@ -124,9 +124,26 @@ public class Main {
                     }
 
                     System.out.println("you have logged in ");;
-                    Email.getInfo( user );
-                    break;
 
+                    while (true) {
+                        System.out.println( "enter which option you want " );
+                        System.out.println("1- Print all account info "+"\n2- Change password \n3- Sign out ");
+                        int opt = scan.nextInt();
+                        switch (opt){
+                            case 1:
+                                Email.getInfo( user );
+                                break ;
+                            case 2:
+
+                                break ;
+                            case 3:
+                                continue start;// jump to the starting loop
+
+                            default:
+                                System.out.println("Invalid option ");
+                                continue ;
+                        }
+                    }
                 case 3:
                     System.out.println("program terminated ");
                     numOfTermnation=3;
