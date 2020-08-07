@@ -113,7 +113,7 @@ public class Email extends EmailOwnerInfo{
         if(user.getPassword().equals( testPassword )){
             System.out.println("welcome");
         }else{
-            throw new InvalidParameterException("wrong password try again"+user.getPassword());
+            throw new InvalidParameterException("wrong password try again");
 
         }
     }
