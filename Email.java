@@ -37,7 +37,16 @@ public class Email extends EmailOwnerInfo{
     }
 
     // test if the given email contains  the @ sign and ends with .com
-    public static void testEmail(String email) {
+    public static void testEmail(String email , Vector emails) {
+
+        if (!(email.endsWith( ".com" ) && email.contains( "@" ))) {
+            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com \n" );
+        }else if (emails.contains( email )){
+            throw new InvalidParameterException("Email already exists try using another email ");
+        }
+    }
+
+    public static void testEmailLogIn(String email) {
         if (!(email.endsWith( ".com" ) && email.contains( "@" ))) {
             throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com \n" );
         }

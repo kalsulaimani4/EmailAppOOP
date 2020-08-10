@@ -45,7 +45,7 @@ public class Main {
                         System.out.println( "enter the new email: " );
                          email = scan.next();
                         try {
-                            Email.testEmail( email );
+                            Email.testEmail( email, emails );
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                             continue;//if we catch a email continue loop till no exception is thrown
@@ -100,7 +100,7 @@ public class Main {
                         System.out.println( "enter Email : " );
                         loginEmail = scan.next();
                         try {
-                            Email.testEmail( loginEmail );
+                            Email.testEmailLogIn( loginEmail );
                             index =Email.logInEmailTest( loginEmail , emails );
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
