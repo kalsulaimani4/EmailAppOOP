@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
         Scanner scan = new Scanner (System.in);
 
         int numOfTermnation=0;// what will end the while loop
@@ -123,7 +123,7 @@ public class Main {
                         break;
                     }
 
-                    System.out.println("you have logged in ");;
+                    System.out.println("you have logged in ");
 
                     while (true) {
                         System.out.println( "enter which option you want " );

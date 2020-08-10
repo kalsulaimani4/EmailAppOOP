@@ -40,7 +40,7 @@ public class Email extends EmailOwnerInfo{
     public static void testEmail(String email , Vector emails) {
 
         if (!(email.endsWith( ".com" ) && email.contains( "@" ))) {
-            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com \n" );
+            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com" );
         }else if (emails.contains( email )){
             throw new InvalidParameterException("Email already exists try using another email ");
         }
@@ -48,7 +48,7 @@ public class Email extends EmailOwnerInfo{
 
     public static void testEmailLogIn(String email) {
         if (!(email.endsWith( ".com" ) && email.contains( "@" ))) {
-            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com \n" );
+            throw new InvalidParameterException( "invalid email doesn't contain  @ or doesn't end with .com" );
         }
     }
 
@@ -71,14 +71,14 @@ public class Email extends EmailOwnerInfo{
                     }
                 }
                 if(!(capCount>=1 && smallCount>=1 && digitCount>=1)){
-                    throw new InvalidParameterException("Invalid password did not meet capital,small letter and number requirements \n");
+                    throw new InvalidParameterException("Invalid password did not meet capital,small letter and number requirements");
                 }
 
             }else{
-                throw new InvalidParameterException("password too long \n");
+                throw new InvalidParameterException("password too long");
             }
         }else{
-            throw new InvalidParameterException("password too short \n");
+            throw new InvalidParameterException("password too short");
         }
     }
 
@@ -91,7 +91,7 @@ public class Email extends EmailOwnerInfo{
 
     }
 
-    // test the password twice to make sure suer remebers the password
+    // test the password twice to make sure suer remembers the password
     public static void testTwice(String firstPassword,String secondPassword){
 
         if(!(firstPassword.equals( secondPassword ))){
@@ -113,7 +113,7 @@ public class Email extends EmailOwnerInfo{
             }
         }
         if(test==false){
-            throw new InvalidParameterException("Email dosnt exist");
+            throw new InvalidParameterException("Email doesn't exist");
         }
         return j;
     }
