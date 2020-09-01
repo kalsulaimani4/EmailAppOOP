@@ -15,4 +15,3 @@ and testing of both are the same  to save it in the vector
 
 all this info is saved in a vector with a type email .
 
-sign in functions: 
