@@ -16,3 +16,8 @@ and testing of both are the same  to save it in the vector
 all this info is saved in a vector with a type email .
 
 sign in functions: 
+printing all user info
+
+changing password  with testing if user knows the old one and test if the new one meets the requimints 
+
+signing out

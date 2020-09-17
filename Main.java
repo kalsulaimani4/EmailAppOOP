@@ -96,7 +96,7 @@ public class Main {
                     String loginPassword;
                     Email user;
                     int index;
-                    while (true) {
+                    while (true) {// testing if given email exits and is a valid email
                         System.out.println( "enter Email : " );
                         loginEmail = scan.next();
                         try {
@@ -110,7 +110,7 @@ public class Main {
                     }
 
                     user=emails.elementAt( index );
-                    while (true){
+                    while (true){// testing password if it is the same as the password for the emial
                         System.out.println("Enter password :");
                         loginPassword = scan.next();
 
@@ -125,19 +125,20 @@ public class Main {
 
                     System.out.println("you have logged in ");
 
-                    while (true) {
+                    while (true) {// showing the options the user has and executing them
                         System.out.println( "enter which option you want " );
                         System.out.println("1- Print all account info "+"\n2- Change password \n3- Sign out ");
                         int opt = scan.nextInt();
                         switch (opt){
-                            case 1:
-                                Email.getInfo( user );
+                            case 1:// printing user info
+                                Email.getInfo( user );// method prints all user info from EmailOwnerInfo class
                                 break ;
-                            case 2:
+                            case 2:// changing  password option
                                 // testing old password to verify user
                                 while(true) {
                                     System.out.println( "enter old password " );
                                     String oldPass = scan.next();
+                                    // testing if the old password matches the one saved
                                     try {
                                         Email.testTwice( user.getPassword(),oldPass );
                                     }catch (Exception e){
